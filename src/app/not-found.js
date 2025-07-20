@@ -13,7 +13,7 @@ export default function NotFound() {
                 <Link
                     href="/"
                     className="inline-flex items-center gap-3 bg-green-700 text-white px-6 py-3 rounded-xl text-lg font-semibold hover:bg-green-800 transition"
-                >
+                >  
                     <FaArrowLeft /> Back to Home
                 </Link>
             </div>

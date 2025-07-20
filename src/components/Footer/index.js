@@ -1,6 +1,7 @@
 "use client";
 import Link from "next/link";
 import { FaFacebookF, FaInstagram, FaTwitter, FaLinkedin } from "react-icons/fa";
+import { navItems } from "@/constants/navItems";
 
 const Footer = () => {
     return (
@@ -17,10 +18,13 @@ const Footer = () => {
                 <div className="space-y-3">
                     <h4 className="text-xl font-semibold mb-2">Quick Links</h4>
                     <ul className="space-y-1 text-sm text-gray-200">
-                        <li><Link href="/" className="hover:text-white">Home</Link></li>
-                        <li><Link href="/cars" className="hover:text-white">Cars</Link></li>
-                        <li><Link href="/booking" className="hover:text-white">Booking</Link></li>
-                        <li><Link href="/contact" className="hover:text-white">Contact Us</Link></li>
+                        {navItems.map((item, idx) => (
+                            <li key={idx}>
+                                <Link href={item.path} className="hover:text-white">
+                                    {item.label}
+                                </Link>
+                            </li>
+                        ))}
                     </ul>
                 </div>
 

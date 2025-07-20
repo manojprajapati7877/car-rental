@@ -13,9 +13,14 @@ const Navbar = () => {
         <header className="fixed top-0 w-full z-50">
             {/* Top Contact Bar */}
             <div className="bg-gradient-to-r from-green-700 to-green-900 text-white text-sm py-2 px-6 flex justify-between items-center">
-                <div>📞 +91 98765 43210</div>
-                <div>✉️ support@drivewise.com</div>
+                <a href="tel:+919876543210" className="hover:underline flex items-center gap-1">
+                    📞 +91 98765 43210
+                </a>
+                <a href="mailto:support@drivewise.com" className="hover:underline flex items-center gap-1">
+                    ✉️ support@drivewise.com
+                </a>
             </div>
+
 
             {/* Main Navbar */}
             <nav className="bg-white shadow-md">
@@ -33,8 +38,8 @@ const Navbar = () => {
                                 key={item.path}
                                 href={item.path}
                                 className={`hover:text-green-700 transition relative pb-1 ${pathname === item.path
-                                        ? "text-green-700 after:absolute after:bottom-0 after:left-0 after:w-full after:h-1 after:bg-green-700 rounded"
-                                        : ""
+                                    ? "text-green-700 after:absolute after:bottom-0 after:left-0 after:w-full after:h-1 after:bg-green-700 rounded"
+                                    : ""
                                     }`}
                             >
                                 {item.label}

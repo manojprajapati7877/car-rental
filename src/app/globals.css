@@ -32,3 +32,13 @@ body {
 .text-text-primary {
   color: var(--text-primary);
 }
+* {
+    user-select: none;
+    -webkit-user-drag: none;
+    -webkit-touch-callout: none;
+}
+button,
+a,
+input[type="submit"] {
+    cursor: pointer;
+}
