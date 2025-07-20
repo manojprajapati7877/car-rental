@@ -19,7 +19,7 @@ const HeroSection = () => {
                     </div>
 
                     <div className="flex flex-col sm:flex-row justify-center md:justify-start gap-4">
-                        <Link href="/booking">
+                        <Link href="/cars">
                             <button className="bg-[var(--primary)] hover:bg-[var(--primary-dark)] text-white px-6 py-3 rounded-lg font-semibold shadow-md transition-all hover:scale-105">
                                 Get your car today
                             </button>

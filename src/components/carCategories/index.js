@@ -5,6 +5,7 @@ import { FaUserFriends, FaGasPump, FaCarSide, FaRoad, FaCogs, FaCalendarAlt, FaS
 
 const cars = [
     {
+        id: 1,
         name: "Audi A6",
         image: "/images/audi-a6.png",
         pricePerDay: "₹3000/day",
@@ -17,6 +18,7 @@ const cars = [
         reviews: 120,
     },
     {
+        id: 2,
         name: "BMW 5 Series",
         image: "/images/bmw-5-series.png",
         pricePerDay: "₹3500/day",
@@ -29,6 +31,7 @@ const cars = [
         reviews: 98,
     },
     {
+        id: 3,
         name: "Mercedes E-Class",
         image: "/images/mercedes-e-class.png",
         pricePerDay: "₹4000/day",
@@ -41,6 +44,7 @@ const cars = [
         reviews: 155,
     },
     {
+        id: 4,
         name: "Jeep Compass",
         image: "/images/jeep-compass.png",
         pricePerDay: "₹2500/day",
@@ -68,45 +72,45 @@ const CarCategories = () => {
                             key={idx}
                             className="bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-[1.03] flex flex-col"
                         >
-                            <Image
-                                src={car.image}
-                                alt={car.name}
-                                width={400}
-                                height={250}
-                                className="object-contain p-4"
-                            />
+                            <Link href={`/cars/${car.id}`} className="block flex-1">
+                                <Image
+                                    src={car.image}
+                                    alt={car.name}
+                                    width={400}
+                                    height={250}
+                                    className="object-contain p-4"
+                                />
 
-                            <div className="p-5 flex flex-col justify-between flex-1">
-                                <div className="space-y-2 mb-4">
-                                    <h3 className="text-lg md:text-xl font-bold text-[var(--heading)]">{car.name}</h3>
-                                    <p className="text-base font-semibold text-[var(--primary)]">{car.pricePerDay}</p>
+                                <div className="p-5 flex flex-col justify-between flex-1">
+                                    <div className="space-y-2 mb-4">
+                                        <h3 className="text-lg md:text-xl font-bold text-[var(--heading)]">{car.name}</h3>
+                                        <p className="text-base font-semibold text-[var(--primary)]">{car.pricePerDay}</p>
 
-                                    <div className="flex items-center justify-center gap-1 text-yellow-400">
-                                        {Array.from({ length: 5 }).map((_, starIdx) => (
-                                            <FaStar
-                                                key={starIdx}
-                                                className={`h-4 w-4 ${starIdx < Math.round(car.rating) ? "text-yellow-400" : "text-gray-300"}`}
-                                            />
-                                        ))}
-                                        <span className="text-xs text-gray-600 ml-1">({car.reviews})</span>
+                                        <div className="flex items-center justify-center gap-1 text-yellow-400">
+                                            {Array.from({ length: 5 }).map((_, starIdx) => (
+                                                <FaStar
+                                                    key={starIdx}
+                                                    className={`h-4 w-4 ${starIdx < Math.round(car.rating) ? "text-yellow-400" : "text-gray-300"}`}
+                                                />
+                                            ))}
+                                            <span className="text-xs text-gray-600 ml-1">({car.reviews})</span>
+                                        </div>
                                     </div>
-                                </div>
 
-                                <div className="grid grid-cols-2 gap-3 text-[var(--text)] text-xs md:text-sm mb-6">
-                                    <div className="flex items-center gap-2 justify-start"><FaUserFriends /> {car.seats} Seats</div>
-                                    <div className="flex items-center gap-2 justify-start"><FaCarSide /> {car.transmission}</div>
-                                    <div className="flex items-center gap-2 justify-start"><FaGasPump /> {car.fuel}</div>
-                                    <div className="flex items-center gap-2 justify-start"><FaCalendarAlt /> {car.year}</div>
-                                    <div className="flex items-center gap-2 justify-start"><FaCogs /> {car.transmission}</div>
-                                    <div className="flex items-center gap-2 justify-start"><FaRoad /> {car.mileage}</div>
-                                </div>
-
-                                <Link href="/booking" className="block">
+                                    <div className="grid grid-cols-2 gap-3 text-[var(--text)] text-xs md:text-sm mb-6">
+                                        <div className="flex items-center gap-2 justify-start"><FaUserFriends /> {car.seats} Seats</div>
+                                        <div className="flex items-center gap-2 justify-start"><FaCarSide /> {car.transmission}</div>
+                                        <div className="flex items-center gap-2 justify-start"><FaGasPump /> {car.fuel}</div>
+                                        <div className="flex items-center gap-2 justify-start"><FaCalendarAlt /> {car.year}</div>
+                                        <div className="flex items-center gap-2 justify-start"><FaCogs /> {car.transmission}</div>
+                                        <div className="flex items-center gap-2 justify-start"><FaRoad /> {car.mileage}</div>
+                                    </div>
                                     <button className="w-full bg-[var(--primary)] hover:bg-[var(--primary-dark)] text-white font-semibold py-3 rounded-xl transition">
                                         Book Now
                                     </button>
-                                </Link>
-                            </div>
+                                </div>
+                            </Link>
+
                         </div>
                     ))}
                 </div>
