@@ -1,5 +1,3 @@
-"use client";
-import { useSearchParams } from "next/navigation";
 import CarBooking from "@/components/booking";
 
 const cars = [
@@ -9,10 +7,8 @@ const cars = [
     { id: 4, name: "Jeep Compass", image: "/images/jeep-compass.png", pricePerDay: "₹2500/day", seats: 5, fuel: "Diesel", transmission: "MT", year: 2018, mileage: "45K", rating: 4.4, reviews: 85, description: "Adventure-ready SUV." },
 ];
 
-export default function BookingPage() {
-    const searchParams = useSearchParams();
-    const carId = searchParams.get('car_id');
-
+export default function BookingPage({ searchParams }) {
+    const carId = searchParams?.car_id;
     const car = cars.find(c => c.id === Number(carId));
 
     if (!car) {
